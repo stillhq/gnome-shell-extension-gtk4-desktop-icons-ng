@@ -12,7 +12,7 @@ Summary:	GNOME Shell Extension - Gtk4 Desktop Icons NG (DING)
 
 License:	GPLv2+
 URL:		https://extensions.gnome.org/extension/5263/gtk4-desktop-icons-ng-ding/
-Source0:	 %{giturl}/-/archive/v%{version}/desktop-icons-ng-Gtk4-%{version}.zip
+Source0:	 %{giturl}/-/archive/%{version}/desktop-icons-ng-Gtk4-%{version}.zip
 BuildArch:	noarch
 
 BuildRequires:  gettext
