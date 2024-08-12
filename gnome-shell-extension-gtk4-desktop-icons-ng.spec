@@ -15,9 +15,10 @@ URL:		https://extensions.gnome.org/extension/5263/gtk4-desktop-icons-ng-ding/
 Source0:	 %{giturl}/-/archive/Gtk4-%{version}/desktop-icons-ng-Gtk4-%{version}.zip
 BuildArch:	noarch
 
+BuildRequires:  gobject-introspection
+BuildRequires:  intltool
+BuildRequires:  meson
 BuildRequires:  gettext
-BuildRequires:  make
-BuildRequires:  glib2
 
 %description
 Libadwaita/Gtk4 port of Desktop Icons NG with multiple fixes and new features.
