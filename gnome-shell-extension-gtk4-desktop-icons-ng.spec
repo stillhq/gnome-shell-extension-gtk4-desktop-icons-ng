@@ -62,17 +62,14 @@ Extension Homepage
 
 %prep
 %autosetup -n %{gitname}-Gtk4-%{version}
+sed -e "/meson_post_install/d" -i meson.build
 
 %build
-%make_build
+%meson --localedir=%{_datadir}/locale
+%meson_build
 
 %install
-%make_install
-
-mkdir -p %{buildroot}%{_datadir}/glib-2.0/schemas
-mkdir -p %{buildroot}%{_datadir}/licenses/%{NAME}
-cp -a schemas/org.gnome.shell.extensions.gtk4-ding.gschema.xml %{buildroot}%{_datadir}/glib-2.0/schemas
-cp COPYING %{buildroot}%{_datadir}/licenses/%{NAME}
+%meson_install
 
 %postun
 if [ $1 -eq 0 ] ; then
@@ -85,11 +82,13 @@ fi
 %{_bindir}/glib-compile-schemas %{extdir}/schemas &> /dev/null || :
 
 %files
-%license COPYING
 %{extdir}
 %{_datadir}/locale/*/LC_MESSAGES/arcmenu.mo
 %{_datadir}/glib-2.0/schemas/org.gnome.shell.extensions.gtk4-ding.gschema.xml
 
 %changelog
+* Mon Aug 12 2024 Cameron Knauff
+Switched from Make to Meson
+
 * Sun Aug 11 2024 Cameron Knauff
-- Switched to using MAKE
+- Initial package
