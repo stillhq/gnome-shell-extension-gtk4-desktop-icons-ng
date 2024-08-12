@@ -61,7 +61,7 @@ Extension Homepage
     https://gitlab.com/smedius/desktop-icons-ng 
 
 %prep
-%autosetup -n %{gitname}-%{version}
+%autosetup -n %{gitname}-Gtk4-%{version}
 
 %build
 %make_build
