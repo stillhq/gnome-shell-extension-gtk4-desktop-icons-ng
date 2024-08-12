@@ -84,6 +84,7 @@ fi
 
 %files
 %{extdir}
+/usr/share/locale/*/LC_MESSAGES/gtk4-ding.mo
 %{_datadir}/glib-2.0/schemas/org.gnome.shell.extensions.gtk4-ding.gschema.xml
 
 %changelog
